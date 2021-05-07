@@ -22,7 +22,6 @@ class PaystackController extends Controller
     public function pay(Request $request){
 
     	$curl = curl_init();
-		//live token sk_live_a158626d85329edd2b41caa8f0d1d7eca61d2d07 sk_test_d19851b5f833a45351489a7755a85a3b793b915d
 		$email = $request->user()->email;
 		$referral = $request->user()->referral;
 		$sub_account = DB::select("SELECT subaccount_code from users where email = ? LIMIT 1",[$referral]);
